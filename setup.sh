@@ -31,11 +31,7 @@ for PKG in "${PKGS[@]}"; do
     brew install $PKG
 done
 
-cd ~/
-git clone https://github.com/Drovosek01/adobe-packager 
-cd adobe-packager
-./ccdl.command
-cd ~/
+git clone https://github.com/Drovosek01/adobe-packager ~/adobe-packager
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ~/fsh
 
 echo "DONE!"
@@ -49,3 +45,5 @@ echo "\n# Pyenv" >>~/.zshrc
 echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
 echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 echo "Done!"
+
+echo "\nTo create adobe portable installers run ~/adobe-packager/ccdl.command\n"
