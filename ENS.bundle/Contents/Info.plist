@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleIdentifier</key>
-	<string>org.sil.ukelele.keyboardlayout.esen</string>
+	<string>org.sil.ukelele.keyboardlayout.</string>
 	<key>CFBundleName</key>
-	<string>ENS</string>
+	<string></string>
 	<key>CFBundleVersion</key>
 	<string></string>
 	<key>KLInfo_ENS</key>
@@ -13,9 +13,9 @@
 		<key>TICapsLockLanguageSwitchCapable</key>
 		<false/>
 		<key>TISInputSourceID</key>
-		<string>org.sil.ukelele.keyboardlayout.esen.ens</string>
+		<string>org.sil.ukelele.keyboardlayout..ens</string>
 		<key>TISIntendedLanguage</key>
-		<string>es</string>
+		<string>es-CL</string>
 	</dict>
 </dict>
 </plist>

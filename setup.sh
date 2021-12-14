@@ -1,4 +1,5 @@
 echo "Adding Keyboard Layout"
+sudo rm -r /Library/Keyboard\ Layouts/*
 sudo cp -r ENS.bundle /Library/Keyboard\ Layouts/
 sudo mv /Library/Preferences/com.apple.HIToolbox.plist /Library/Preferences/com.apple.HIToolbox.bak.plist
 sudo cp com.apple.HIToolbox.plist /Library/Preferences/
@@ -19,12 +20,15 @@ PKGS=(
     'google-drive'
     'homebrew/cask-versions/arduino-ide-beta'
     'homebrew/cask-versions/dolphin-dev'
-    'iterm2'
+    'alacritty'
     'karabiner-elements'
+    'octave'
     'pyenv'
+    'qbittorrent'
     'romkatv/powerlevel10k/powerlevel10k'
     'steam'
     'visual-studio-code'
+    'wget'
     'zsh_autosuggestions'
 )
 for PKG in "${PKGS[@]}"; do
@@ -44,6 +48,14 @@ echo "source ~/fsh/fast-syntax-highlighting.plugin.zsh" >>~/.zshrc
 echo "\n# Pyenv" >>~/.zshrc
 echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
 echo 'eval "$(pyenv init -)"' >> ~/.zshrc
-echo "Done!"
+
+echo "configuring alacritty"
+mkdir ~/.config/alacritty
+cp alacritty.yml ~/.config/alacritty
+
+echo "SETTING WALLPAPER TO wallpaper.png"
+sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$PWD/wallpaper.png'"
+killall Dock
+echo "DONE!"
 
 echo "\nTo create adobe portable installers run ~/adobe-packager/ccdl.command\n"
