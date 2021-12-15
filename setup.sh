@@ -50,6 +50,7 @@ echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
 echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 
 echo "configuring alacritty"
+mkdir ~/.config
 mkdir ~/.config/alacritty
 cp alacritty.yml ~/.config/alacritty
 
