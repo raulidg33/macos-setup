@@ -53,14 +53,10 @@ echo "\n# Pyenv" >>~/.zshrc
 echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
 echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 
-echo "configuring alacritty"
+echo "copying configuration file for alacritty"
 mkdir ~/.config
 mkdir ~/.config/alacritty
 cp alacritty.yml ~/.config/alacritty
-
-echo "SETTING WALLPAPER TO wallpaper.png"
-sudo sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$PWD/wallpaper.png'"
-killall Dock
 echo "DONE!"
 
 echo "\nTo create adobe portable installers run ~/adobe-packager/ccdl.command\n"
