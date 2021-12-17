@@ -9,27 +9,31 @@ echo "Done!"
 echo "\nINSTALLING HOMEBREW AND PACKAGES\n"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+brew update
+
 PKGS=(
     'adobe-creative-cloud'
+    'alacritty'
     'amethyst'
     'anydesk'
     'autojump'
     'brave-browser'
     'crossover'
     'discord'
+    'dozer'
     'google-drive'
     'homebrew/cask-versions/arduino-ide-beta'
     'homebrew/cask-versions/dolphin-dev'
-    'alacritty'
     'karabiner-elements'
     'octave'
     'pyenv'
     'qbittorrent'
+    'rectangle'
     'romkatv/powerlevel10k/powerlevel10k'
     'steam'
     'visual-studio-code'
     'wget'
-    'zsh_autosuggestions'
+    'zsh-autosuggestions'
 )
 for PKG in "${PKGS[@]}"; do
     brew install $PKG
@@ -55,7 +59,7 @@ mkdir ~/.config/alacritty
 cp alacritty.yml ~/.config/alacritty
 
 echo "SETTING WALLPAPER TO wallpaper.png"
-sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$PWD/wallpaper.png'"
+sudo sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$PWD/wallpaper.png'"
 killall Dock
 echo "DONE!"
 
