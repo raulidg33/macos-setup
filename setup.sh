@@ -1,10 +1,14 @@
-echo "Adding Keyboard Layout"
+sudo echo "Adding Keyboard Layout"
 sudo rm -r /Library/Keyboard\ Layouts/*
 sudo cp -r ENS.bundle /Library/Keyboard\ Layouts/
 sudo mv /Library/Preferences/com.apple.HIToolbox.plist /Library/Preferences/com.apple.HIToolbox.bak.plist
 sudo cp com.apple.HIToolbox.plist /Library/Preferences/
 sudo chown root:wheel /Library/Preferences/com.apple.HIToolbox.plist; sudo chmod 644 /Library/Preferences/com.apple.HIToolbox.plist
 echo "Done!"
+
+touch ~/.hushlogin
+
+cp fonts_for_power10k/*.ttf /Library/Fonts/ 
 
 echo "\nINSTALLING HOMEBREW AND PACKAGES\n"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -13,7 +17,6 @@ brew update
 
 PKGS=(
     'adobe-creative-cloud'
-    'alacritty'
     'amethyst'
     'anydesk'
     'autojump'
@@ -24,6 +27,7 @@ PKGS=(
     'google-drive'
     'homebrew/cask-versions/arduino-ide-beta'
     'homebrew/cask-versions/dolphin-dev'
+    'iterm2'
     'karabiner-elements'
     'octave'
     'pyenv'
@@ -35,6 +39,7 @@ PKGS=(
     'wget'
     'zsh-autosuggestions'
 )
+
 for PKG in "${PKGS[@]}"; do
     brew install $PKG
 done
@@ -53,10 +58,9 @@ echo "\n# Pyenv" >>~/.zshrc
 echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
 echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 
-echo "copying configuration file for alacritty"
-mkdir ~/.config
-mkdir ~/.config/alacritty
-cp alacritty.yml ~/.config/alacritty
+echo "copying profile file for iterm"
+mkdir -p ~/.config/iterm2/AppSupport/DynamicProfiles/
+cp iterm2-profiles.json  ~/.config/iterm2/AppSupport/DynamicProfiles/
 echo "DONE!"
 
 echo "\nTo create adobe portable installers run ~/adobe-packager/ccdl.command\n"
