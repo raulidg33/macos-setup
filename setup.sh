@@ -17,6 +17,7 @@ brew update
 
 PKGS=(
     'adobe-creative-cloud'
+    'alt-tab'
     'amethyst'
     'anydesk'
     'appcleaner'
@@ -26,12 +27,15 @@ PKGS=(
     'crossover'
     'discord'
     'dozer'
+    'fliqlo'
     'genymotion'
     'google-drive'
     'homebrew/cask-versions/arduino-ide-beta'
     'homebrew/cask-versions/dolphin-dev'
+    'iina'
     'iterm2'
     'karabiner-elements'
+    'maccy'
     'microsoft-teams'
     'monitorcontrol'
     'neofetch'
