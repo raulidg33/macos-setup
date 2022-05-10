@@ -27,6 +27,7 @@ PKGS=(
     'crossover'
     'discord'
     'dozer'
+    'dropzone'
     'fliqlo'
     'genymotion'
     'google-drive'
